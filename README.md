@@ -1,6 +1,6 @@
 # The AI Council
 
-A virtual board of advisors. Ten distinct minds you can summon — individually or together — to pressure-test ideas, argue with each other, and tell you what you don't want to hear in a way you can actually use.
+A virtual board of advisors. Ten distinct minds you can summon, individually or together, to pressure-test ideas, argue with each other, and tell you what you don't want to hear in a way you can actually use.
 
 ## The Members
 
@@ -19,7 +19,7 @@ A virtual board of advisors. Ten distinct minds you can summon — individually 
 
 ## How to use it
 
-Read [`council-protocol.md`](council-protocol.md) — it defines the rules of engagement (how they talk, when they push back, what "constructive brutal honesty" means here).
+Read [`council-protocol.md`](council-protocol.md). It defines the rules of engagement (how they talk, when they push back, what "constructive brutal honesty" means here).
 
 Three modes:
 
@@ -47,12 +47,12 @@ cp .env.example .env
 Models are addressed as `provider:model` strings in `.env`. Providers: `anthropic`, `mistral`.
 
 ```env
-# Defaults — used by every member unless overridden
+# Defaults used by every member unless overridden
 ALFRED_MODEL=anthropic:claude-opus-4-7
 COUNCIL_DEFAULT_MODEL=anthropic:claude-opus-4-7
 
 # Per-member override (key = COUNCIL_MODEL_<SLUG_UPPERCASED_WITH_UNDERSCORES>)
-# Mix providers/tiers to balance views — heavyweight thinkers on Opus,
+# Mix providers/tiers to balance views: heavyweight thinkers on Opus,
 # lighter voices on a smaller model, etc.
 COUNCIL_MODEL_MARCUS_AURELIUS=anthropic:claude-opus-4-7
 COUNCIL_MODEL_WARREN_BUFFETT=anthropic:claude-sonnet-4-6
@@ -110,11 +110,11 @@ transcripts/             # saved sessions (JSON + Markdown)
 
 ## Adding a new advisor
 
-1. Create `council/<slug>/personality.md`. Mirror the structure of an existing one — H1 with the name, an italic one-liner for the domain, then `## Identity`, voice, beliefs, etc.
+1. Create `council/<slug>/personality.md`. Mirror the structure of an existing one: H1 with the name, an italic one-liner for the domain, then `## Identity`, voice, beliefs, etc.
 2. Add an entry to `COLORS` and `EMOJI` in `harness/roster.py`.
 3. Optionally pin a model with `COUNCIL_MODEL_<SLUG>=...` in `.env`.
 
-That's it — Alfred will pick them up automatically.
+That's it. Alfred will pick them up automatically.
 
 ## License
 
